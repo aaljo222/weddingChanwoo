@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../../Css/Frame.css";
+import "../../css/Frame.css";
 import { products } from "../../data/FrameData";
-import { useCart } from "../Invitation/CartProvider";
+import { useCart } from "../invitation/CartProvider";
 import { useNavigate } from "react-router-dom";
 
 const currency = (n) => (n ?? 0).toLocaleString("ko-KR");
@@ -36,7 +36,7 @@ export default function Frame() {
       unitPrice: unit,
       qty,
       options: {},
-      image: item.image
+      image: item.image,
     });
 
     navigate("/cartList");

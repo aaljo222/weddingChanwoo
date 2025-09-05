@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { FormatAll } from "./FormatAll";
 import { Calendar } from "./Calendar";
 import { FormSections } from "./FormSections";
-import "../../Css/InvitationAdd.css"; // 기존 스타일 재사용
+import "../../css/InvitationAdd.css"; // 기존 스타일 재사용
 import { loadInvList, saveInvList } from "../../Util/invStore";
 
 const InvitationEdit = () => {

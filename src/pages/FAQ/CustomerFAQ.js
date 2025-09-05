@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../../Css/CustomerFAQ.css";
-import { Petals } from "../../Util/Petals";
+import "../../css/CustomerFAQ.css";
+import { Petals } from "../../utils/Petals";
 import { useNavigate } from "react-router-dom";
 import { askData } from "../../data/FaqData";
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StarRating } from "../../Util/ReviewStarRating";
+import { StarRating } from "../../utils/ReviewStarRating";
 
 function ReviewForm({ initialData, onSubmit, onCancel }) {
   // initialData가 존재하면 수정 모드, 없으면 새 리뷰 추가 모드로 설정

@@ -1,6 +1,6 @@
 // FloatingBanner.jsx
 import React, { useState, useEffect } from "react";
-import "../Css/FloatingBanner.css";
+import "../css/FloatingBanner.css";
 
 const bannerImages = [
   "https://marketplace.canva.com/EAGfoeeDufE/1/0/1143w/canva-%ED%95%91%ED%81%AC-%ED%9D%B0%EC%83%89-%EA%B7%80%EC%97%AC%EC%9A%B4-%EA%B2%B0%ED%98%BC-%EC%B4%88%EB%8C%80%EC%9E%A5-oENsHkXiA6w.jpg",

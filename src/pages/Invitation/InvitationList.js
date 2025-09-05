@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FormatAll } from "./FormatAll";
-import "../../Css/InvitationList.css";
+import "../../css/InvitationList.css";
 import logoImage from "../../art/logo.png";
 import PurchaseModal from "./PurchaseModal";
 import { loadInvList, saveInvList } from "../../utils/invStore"; // ✅ utils 경로

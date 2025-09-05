@@ -1,8 +1,8 @@
 // src/pages/Ticket/Ticket.jsx
 import React, { useState } from "react";
-import "../../Css/Ticket.css";
+import "../../css/Ticket.css";
 import { ticketImages } from "../../data/TicketData";
-import { useCart } from "../Invitation/CartProvider";
+import { useCart } from "../invitation/CartProvider";
 import { useNavigate } from "react-router-dom";
 
 const parsePrice = (v) => Number(String(v).replace(/[^\d]/g, "")) || 0;

@@ -1,5 +1,5 @@
 import React from "react";
-import { StarRating } from "../../Util/ReviewStarRating";
+import { StarRating } from "../../utils/ReviewStarRating";
 
 function ReviewItem({ review, onEdit, onDelete }) {
   return (

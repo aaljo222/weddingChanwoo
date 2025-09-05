@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Inquiry from "./Inquiry";
-import "../../Css/Inquiry.css";
+import "../../css/Inquiry.css";
 
 // 문의목록을 수정하고, 삭제하는 Page
 const InquiryPage = () => {

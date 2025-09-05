@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReviewForm from "./ReviewForm";
 import ReviewList from "./ReviewList";
-import "../../Css/CustomerReview.css";
+import "../../css/CustomerReview.css";
 
 // 초기 리뷰 목록 데이터입니다.
 // 실제로는 서버나 DB에서 받아오지만, 처음에는 이 데이터를 보여줍니다.

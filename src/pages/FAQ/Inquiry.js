@@ -1,6 +1,6 @@
 // Inquiry.jsx
 import React, { useState, useEffect } from "react";
-import "../../Css/Inquiry.css";
+import "../../css/Inquiry.css";
 
 // InquiryPage 부모컴포넌트
 const Inquiry = ({ onSubmit, editData, onMoveToList }) => {

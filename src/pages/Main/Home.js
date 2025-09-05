@@ -1,7 +1,7 @@
 // Home.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import FloatingBanner from "../../Util/FloatingBanner";
+import FloatingBanner from "../../utils/FloatingBanner";
 
 function Home() {
   const handleButtonClick = () => {

@@ -1,5 +1,5 @@
 import { AccordionSection } from "./AccordionSection";
-import "../../Css/FormSections.css";
+import "../../css/FormSections.css";
 
 /** 폼 섹션 (InvitationEdit에서 그대로 꽂아 쓰면 됨) */
 export function FormSections({
