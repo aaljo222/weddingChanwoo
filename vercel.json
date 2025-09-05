@@ -1,21 +1,13 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    },
-    { "src": "backend/api/index.js", "use": "@vercel/node" }
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(.*)", "destination": "/" }
   ],
-  "routes": [
-    { "src": "^/api/(.*)$", "dest": "backend/api/index.js" },
-
-    { "src": "^/assets/(.*)$", "dest": "/frontend/assets/$1" },
-    { "src": "^/favicon\\.ico$", "dest": "/frontend/favicon.ico" },
-
-    { "handle": "filesystem" },
-
-    { "src": "/(.*)", "dest": "/frontend/index.html" }
-  ]
+  "functions": {
+    "api/**/*.{js,ts}": {
+      "runtime": "nodejs20.x",
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
 }
