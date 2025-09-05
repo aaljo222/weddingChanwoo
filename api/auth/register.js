@@ -1,56 +1,34 @@
-import { getDb } from "../db.js";
-import bcrypt from "bcryptjs";
+const { getDb } = require("../db.js");
+const bcrypt = require("bcryptjs");
+const { readJson, send } = require("../_utils.js");
 
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   if (req.method !== "POST")
-    return res.status(405).json({ error: "Method Not Allowed" });
+    return send(res, 405, { error: "Method Not Allowed" });
 
   try {
-    const body = await readJson(req);
-    const { name, email, password } = body;
-
-    if (!name || !email || !password) {
-      return res.status(400).json({ error: "name, email, password required" });
-    }
-    if (password.length < 6) {
-      return res.status(400).json({ error: "password must be >= 6 chars" });
-    }
+    const { email, password, name } = await readJson(req);
+    if (!email || !password)
+      return send(res, 400, { error: "email, password required" });
 
     const db = await getDb();
-    const hash = await bcrypt.hash(password, 10);
+    const users = db.collection("users");
 
-    const doc = {
-      name,
-      email: String(email).toLowerCase(),
-      passwordHash: hash,
+    const exists = await users.findOne({ email });
+    if (exists) return send(res, 409, { error: "Email already in use" });
+
+    const hash = await bcrypt.hash(password, 10);
+    const user = {
+      email,
+      password: hash,
+      name: name || "",
       createdAt: new Date(),
     };
+    await users.insertOne(user);
 
-    const r = await db.collection("users").insertOne(doc);
-    return res.status(201).json({ ok: true, userId: r.insertedId });
+    return send(res, 201, { ok: true });
   } catch (e) {
-    // 유니크 충돌
-    if (e?.code === 11000) {
-      return res.status(409).json({ error: "email already registered" });
-    }
     console.error(e);
-    return res.status(500).json({ error: "server error" });
+    return send(res, 500, { error: "Internal Server Error" });
   }
-}
-
-function readJson(req) {
-  return new Promise((resolve, reject) => {
-    let data = "";
-    req.on("data", (c) => (data += c));
-    req.on("end", () => {
-      try {
-        resolve(data ? JSON.parse(data) : {});
-      } catch (e) {
-        reject(e);
-      }
-    });
-    req.on("error", reject);
-  });
-}
-
-export const config = { api: { bodyParser: false } };
+};
