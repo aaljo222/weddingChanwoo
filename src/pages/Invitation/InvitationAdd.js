@@ -1,7 +1,7 @@
 // src/components/InvitationAdd.jsx
 import React, { useMemo, useState } from "react";
 import { Calendar } from "./Calendar";
-import "../../Css/InvitationAdd.css";
+import "../../css/InvitationAdd.css";
 import { Link, useNavigate } from "react-router-dom";
 import { loadInvList, saveInvList } from "../../Util/invStore";
 import { FormSections } from "./FormSections";

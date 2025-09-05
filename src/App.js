@@ -7,7 +7,7 @@ import InvitationCards from "./pages/invitation/InvitationCards";
 import InvitationAdd from "./pages/invitation/InvitationAdd";
 import InvitationList from "./pages/invitation/InvitationList";
 import InvitationEdit from "./pages/invitation/InvitationEdit";
-import FAQ from "./pages/FAQ/FAQ";
+import FAQ from "./pages/faq/FAQ";
 import InquiryPage from "./pages/faq/InquiryPage";
 import Frame from "./pages/frame/Frame";
 import Letter from "./pages/letter/Letter";
