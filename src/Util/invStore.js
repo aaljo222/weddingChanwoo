@@ -1,11 +1,13 @@
 // src/utils/invStore.js
 const STORAGE_KEY = "inv_list";
 
-export function loadInvList() {
+export function loadInvList(fallback = []) {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return JSON.parse(raw);
-  } catch {}
+    return raw ? JSON.parse(raw) : fallback;
+  } catch {
+    return fallback;
+  }
 }
 
 export function saveInvList(list) {

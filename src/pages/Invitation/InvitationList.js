@@ -5,20 +5,13 @@ import { FormatAll } from "./FormatAll";
 import "../../Css/InvitationList.css";
 import logoImage from "../../art/logo.png";
 import PurchaseModal from "./PurchaseModal";
-import { loadInvList, saveInvList } from "../../Util/invStore";
+import { loadInvList, saveInvList } from "../../utils/invStore"; // ✅ utils 경로
 
 const InvitationList = () => {
-  // 최초 진입 시 로컬스토리지에서만 로드 (필요 시 fallback 넣어도 됨)
-  const [invData, setInvData] = useState(() =>
-    loadInvList([
-      // 필요하면 여기에 초기 seed 데이터(배열) 넣기
-      // { ino: 1, date:"2025-09-01", time:"12:00", groomName:"홍길동", brideName:"김영희", bg:"#FFFFFF", title1:"소중한 분들을 초대합니다", content:"..." }
-    ])
-  );
+  const [invData, setInvData] = useState(() => loadInvList() || []);
 
   const [open, setOpen] = useState(false);
 
-  // 샘플 상품(구매 모달용)
   const product = {
     id: "threeOrganic-mobile-01",
     title: "ThreeOrganic 모바일 청첩장",
@@ -57,8 +50,8 @@ const InvitationList = () => {
             첫 카드를 만들어보세요. 예식 정보와 커버 이미지를 넣으면 자동으로
             예쁘게 구성돼요.
           </p>
-          <Link to="/InvitationAdd" className="wl-btn wl-btn--primary">
-            새 카드 만들기
+          <Link to="/invitation-add" className="wl-btn wl-btn--primary">
+            {/* ✅ */}새 카드 만들기
           </Link>
         </div>
       </div>
@@ -120,9 +113,10 @@ const InvitationList = () => {
 
               <footer className="wl-actions">
                 <Link
-                  to={`/InvitationEdit/${i.ino}`}
+                  to={`/invitation-edit/${i.ino}`}
                   className="wl-btn wl-btn--primary"
                 >
+                  {/* ✅ */}
                   편집하기
                 </Link>
                 <button
@@ -146,9 +140,10 @@ const InvitationList = () => {
 
       <div className="wl-add-container">
         <Link
-          to="/InvitationAdd"
+          to="/invitation-add"
           className="wl-btn wl-btn--primary wl-btn--large"
         >
+          {/* ✅ */}
           청첩장 추가하기
         </Link>
       </div>
@@ -162,5 +157,4 @@ const InvitationList = () => {
     </div>
   );
 };
-
 export default InvitationList;

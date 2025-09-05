@@ -22,7 +22,7 @@ const InvitationEdit = () => {
   );
 
   useEffect(() => {
-    if (!existing) navigate("/InvitationList");
+    if (!existing) navigate("/invitation-list");
   }, [existing, navigate]);
 
   // 폼 상태 (existing 기반 초기값)

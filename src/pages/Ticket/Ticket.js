@@ -61,7 +61,7 @@ export default function Ticket() {
           unitPrice: unit,
           qty: 1, // 🔒 항상 1개
           options: { singleOnly: true },
-          image: ticket.image
+          image: ticket.image,
         });
       }
       navigate("/cartList");
@@ -77,10 +77,10 @@ export default function Ticket() {
       unitPrice: unit,
       qty,
       options: {},
-      image: ticket.image
+      image: ticket.image,
     });
 
-    navigate("/cartList");
+    navigate("/cart-list"); // ✅
   };
 
   return (

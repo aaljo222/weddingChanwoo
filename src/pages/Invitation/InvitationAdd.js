@@ -63,7 +63,7 @@ export default function InvitationAdd() {
     const addedData = [...(invData || []), newItem];
     setInvData(addedData);
     saveInvList(addedData);
-    navigate("/InvitationList");
+    navigate("/invitation-list");
   };
 
   return (

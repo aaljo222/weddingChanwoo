@@ -1,7 +1,7 @@
 // ./components/PurchaseModal.jsx
 import React, { useEffect, useState } from "react";
-import { useCart } from "./CartProvider";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "./CartProvider";
 
 function useLockBodyScroll(lock) {
   useEffect(() => {
@@ -79,7 +79,7 @@ export default function PurchaseModal({
     });
 
     // 장바구니 담은 후 장바구니 페이지로 이동
-    navigate("/cartList"); // 라우트 경로/대소문자 일치 필수
+    navigate("/cart-list"); // 라우트 경로/대소문자 일치 필수
     onClose?.();
     // alert("장바구니에 담겼습니다.");
   };
