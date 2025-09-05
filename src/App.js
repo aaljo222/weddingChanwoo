@@ -14,12 +14,12 @@ import Letter from "./pages/letter/Letter";
 import Ticket from "./pages/ticket/Ticket";
 import Review from "./pages/review/Review";
 import CartList from "./pages/cart/CartList";
-import { CartProvider } from "./cart/CartContext"; // ✅ 경로 고정
 import OrderComplete from "./pages/cart/OrderComplete";
 import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
 import { AuthProvider } from "./features/auth/AuthContext";
 import RequireAuth from "./pages/auth/RequireAuth";
+import { CartProvider } from "./pages/invitation/CartProvider";
 
 const HEADER_HEIGHT = 60;
 
