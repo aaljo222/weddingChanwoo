@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/header-and-footer/Header";
 import Footer from "./components/header-and-footer/Footer";
 import Home from "./pages/Main/Home";
-import InvitationCards from "./pages/invitation/InvitationCards";
-import InvitationAdd from "./pages/invitation/InvitationAdd";
-import InvitationList from "./pages/invitation/InvitationList";
-import InvitationEdit from "./pages/invitation/InvitationEdit";
+import InvitationCards from "./pages/invitation2/InvitationCards";
+import InvitationAdd from "./pages/invitation2/InvitationAdd";
+import InvitationList from "./pages/invitation2/InvitationList";
+import InvitationEdit from "./pages/invitation2/InvitationEdit";
 import FAQ from "./pages/faq/FAQ";
 import InquiryPage from "./pages/faq/InquiryPage";
 import Frame from "./pages/frame/Frame";
@@ -19,7 +19,7 @@ import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
 import { AuthProvider } from "./features/auth/AuthContext";
 import RequireAuth from "./pages/auth/RequireAuth";
-import { CartProvider } from "./pages/invitation/CartProvider";
+import { CartProvider } from "./pages/invitation2/CartProvider";
 
 const HEADER_HEIGHT = 60;
 
